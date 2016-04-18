@@ -1,0 +1,85 @@
+{
+	protos: {
+		player: {
+			player: {
+			},
+			bodyDef: {
+				angularDamping: 1
+			},
+			sprites: []
+		},
+		floor: {
+			fixtures: [
+				{shape: [box, 5, 1]}
+			],
+			sprites: [
+				{name:sky, width:400, height:80, index:-1},
+			],
+			bodyDef: {
+				type: StaticBody
+			}
+		},
+		object: {
+			bodyDef: {
+				type: StaticBody
+			}
+		},
+		pickup: {
+			bodyDef: {
+				type: KinematicBody
+			},
+			pickup: {
+				shape: circle
+			},
+			sprites: []
+		},
+		dust: {
+			bodyDef: {
+				type: KinematicBody
+			},
+			sprites: [
+				{name:dust, width:.75, height:.75}
+			],
+			fade: {}
+		}
+		change_particle: {
+			bodyDef: {
+				type: KinematicBody
+			},
+			sprites: [
+				{name:goal, width:1, height:1}
+			],
+			fade: {}
+		}
+	},
+	shapes: [
+		{
+			name: "square",
+			shape: [box, 1, 1],
+			torque: 1,
+			sprite: {name:player, width:2, height:2}
+		},
+		{
+			name: "smallsquare",
+			shape: [box, .5, .5],
+			torque: .125,
+			speed: 1,
+			jump: 1,
+			sprite: {name:player_small, width:1, height:1}
+		},
+		{
+			name: "rect",
+			shape: [box, .25, 2],
+			torque: .5,
+			speed: .5,
+			sprite: {name:player_rect, width:.5, height:4}
+		},
+		{
+			name: "circle",
+			shape: [circle, 1],
+			torque: 1,
+			speed: 3,
+			sprite: {name:player_circle, width:2, height:2}
+		},
+	]
+}
